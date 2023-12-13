@@ -295,6 +295,7 @@ function App() {
       handleClickOpen();
       setSelectedValue(e); // 设置选中的口味为 selectedValue
     } else {
+      setPurchase([...purchase, e]);
     }
   };
   const getDom = (name) => {
@@ -316,8 +317,9 @@ function App() {
             justifyContent={"center"}
             border={"2px solid black"}
             borderRadius={"50%"}
+            overflow={"hidden"}
           >
-            <img src={IcedTea} height="70%" />
+            <img src={IcedTea} height="100%" />
           </Box>
           <Box
             position={"absolute"}
@@ -362,8 +364,6 @@ function App() {
     });
   };
   const setClick = (e) => {
-    console.log(e, "e");
-
     setPurchase([...purchase, e]);
   };
   useEffect(() => {
@@ -400,11 +400,14 @@ function App() {
         justifyContent={"center"}
       >
         <Badge badgeContent={purchase.length} color="primary">
-          <AddShoppingCartIcon fontSize={"large"} />
+          <AddShoppingCartIcon fontSize={"2rem "} />
 
-          <Button variant="outlined" onClick={() => setcardOpen(!cardOpen)}>
+          <Box
+            sx={{ width: "6rem", height: "1.5rem" }}
+            onClick={() => setcardOpen(!cardOpen)}
+          >
             生成购物列表
-          </Button>
+          </Box>
         </Badge>
       </Box>
     </Box>

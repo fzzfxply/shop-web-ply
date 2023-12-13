@@ -35,12 +35,12 @@ export default function OutlinedCard(props) {
   }, [purchase.length]);
   return (
     <Dialog open={open} onClose={handleClose}>
-      <Box sx={{ minWidth: 400 }}>
+      <Box sx={{ minWidth: "25rem" }}>
         <Card variant="outlined">
           <React.Fragment>
             <CardContent>
               <Typography
-                sx={{ fontSize: 16 }}
+                sx={{ fontSize: "1rem" }}
                 color="text.secondary"
                 gutterBottom
               >
@@ -49,7 +49,7 @@ export default function OutlinedCard(props) {
               {purchase.map((item, index) => {
                 return (
                   <Typography
-                    sx={{ fontSize: 14 }}
+                    sx={{ fontSize: "0.875rem" }}
                     key={item.product_descriptio + index}
                   >
                     {item.product_description} --{item.selectClick}--
@@ -68,7 +68,7 @@ export default function OutlinedCard(props) {
                   </Typography>
                 );
               })}
-              <Typography sx={{ fontSize: 14 }}>
+              <Typography sx={{ fontSize: "0.875rem" }}>
                 合计---{computeResult}
               </Typography>
             </CardContent>
